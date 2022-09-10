@@ -1,38 +1,265 @@
+@import '~antd/dist/antd.css';
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.site-layout-content {
+  min-height: 280px;
+  padding: 24px;
+  background: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.outerBox{
+  height: 230px;
+  border: 1px solid #EBEFF3;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin: 10px 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.innerBox{
+  height: 54px;
+  border: 1px solid #EBEFF3;
+  border-radius: 8px;
+  background-color: rgb(216 203 203 / 9%);
+  padding: 0px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.rightSpace{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContent{
+  padding: 0px 90px;
+  margin-top: 60px;
+}
+
+.iconColor{
+  color: rgb(214 206 206);;
+  font-size: 18px;
+}
+
+.exit{
+  color: rgb(84 84 84 / 39%);
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: right;
+  font-weight: 700;
+  padding: 14px 10px;
+}
+
+.badges{
+  border: 1px solid purple;
+  background-color: purple;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 2px 6px;
+  width: 54px;
+  margin-bottom: 12px;
+
+}
+
+.mainDiv{
+  padding: 26px 26px;
+}
+
+.description{
+  margin-bottom: 12px;
+}
+
+.searchbar{
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.disabled {
+    color: #fff !important;
+    border-color: #b8ccddf2 !important;
+    background: #b8ccddf2 !important;
+    text-shadow: 0 -1px 0 #b8ccddf2;
+    box-shadow: 0 2px 0 #b8ccddf2;
+    width: 100%;
+}
+
+.primary {
+  color: #fff;
+  border-color: #3079ed;
+  background: #3079ed;
+  text-shadow: 0 -1px 0 #b8ccddf2;
+  box-shadow: 0 2px 0 #b8ccddf2;
+  width: 100%;
+}
+
+.primary:hover {
+  color: #fff;
+  border-color: #3079ed;
+  background: #3079ed;
+  text-shadow: 0 -1px 0 #b8ccddf2;
+  box-shadow: 0 2px 0 #b8ccddf2;
+  width: 100%;
+}
+
+.listBox{
+  border: 1px solid #b8ccddf2;
+  max-height: 166px;
+  overflow: scroll;
+  margin-top: 8px;
+  border-radius: 6px;
+  z-index: 1;
+  position: absolute;
+  background-color: #fff !important;
+  width: 100%;
+  cursor: pointer;
+}
+
+.softwareClass{
+  clear: both;
+  padding: 10px 10px 26px 16px;
+  margin: 4px 10px;
+  border-radius: 4px;
+}
+
+.softwareName{
+  float : left
+}
+
+.softwareIcon{
+  float : left
+}
+
+.softwareIcon img{
+  width: 30px;
+  height: 20px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.image img{
+  width: 40px;
+  height: 30px;
+  object-fit: cover;
+  text-align: center;
+}
+
+.remove{
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.iconred{
+  color: red;
+  font-size: 12px;
+}
+
+.innerImageBox{
+  margin-bottom: 20px;
+}
+
+.image{
+  text-align: center;
+}
+
+.softname{
+  font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.active{
+  background-color: #3079ed;
+  color: #fff;
+}
+
+.icon{
+  float: right;
+}
+
+.show{
+  display: block;
+}
+
+.hide{
+  display: none;
+}
+
+.textBoxs{
+  text-align: center;
+  color: gray;
+}
+
+.contentBox{
+  padding: 0px 100px;
+  margin-top: 64px;
+}
+
+@media (max-width: 575.98px) {
+  .contentBox {
+    padding: 0px 20px;
+    margin-top: 64px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .mainContent {
+    padding: 0px 20px;
+    margin-top: 30px;
+  }
+
+  .ant-col-offset-4 {
+    margin-left: 0px;
   }
 }
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .contentBox {
+    padding: 0px 20px;
+    margin-top: 64px;
+  }
+
+  .mainContent {
+    padding: 0px 20px;
+    margin-top: 30px;
+  }
+
+  .ant-col-offset-4 {
+    margin-left: 0px;
+  }
+ }
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  .contentBox {
+    padding: 0px 20px;
+    margin-top: 64px;
+  }
+
+  .mainContent {
+    padding: 0px 20px;
+    margin-top: 30px;
+  }
+
+  .ant-col-offset-4 {
+    margin-left: 0px;
+  }
+ }
+
+/* @media (min-width: 992px) and (max-width: 1199.98px) { }
+
+@media (min-width: 1200px) {  }
+
+@media (max-width: 575.98px) { }
+
+@media (max-width: 767.98px) { }
+
+@media (max-width: 991.98px) { }
+
+@media (max-width: 1199.98px) {  } */
