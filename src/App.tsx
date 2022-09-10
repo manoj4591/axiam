@@ -1,18 +1,12 @@
 import React, { FC, useState } from 'react';
 import { Layout, Row, Col, Button, Input, notification } from 'antd';
-import {
-  PlusOutlined,
-  SearchOutlined,
-  CheckOutlined,
-  CloseOutlined
-} from '@ant-design/icons';
+import {PlusOutlined, SearchOutlined, CheckOutlined, CloseOutlined} from '@ant-design/icons';
 import './App.css'
 import softwares from './data/software';
 import { softwareObj } from './models/software';
 // import axios from "axios";
 
 const { Content } = Layout;
-
 type NotificationType = 'success' | 'info' | 'warning' | 'error';
 
 const App: FC = () => {
@@ -20,34 +14,18 @@ const App: FC = () => {
   const [searchShow, setSearchShow] = useState<boolean>(false);
   const [selectedId, setSelectedIds] = useState<softwareObj[]>([]);
 
-  const filteredSoftwares = softwares.filter(
-    software => {
-      return (
-        software
-        .name
-        .toLowerCase()
-        .includes(searchField.toLowerCase())
-      );
-    }
+  const filteredSoftwares = softwares.filter(software => {
+      return (software.name.toLowerCase().includes(searchField.toLowerCase()));}
   );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value: inputValue } = e.target;
     setSearchField(inputValue);
-    if(inputValue === ""){
-      setSearchShow(false);
-    }
-    else {
-      setSearchShow(true);
-    }
+    inputValue === "" ? setSearchShow(false) : setSearchShow(true);
   };
 
   const divHandler = (newElement: softwareObj): void => {
-    if(selectedId.includes(newElement)){
-      setSelectedIds(selectedId.filter(selected => { return selected !== newElement;}))
-    } else {
-      setSelectedIds(oldArray => [...oldArray, newElement])
-    }
+    selectedId.includes(newElement) ? setSelectedIds(selectedId.filter(selected => { return selected !== newElement;})) : setSelectedIds(oldArray => [...oldArray, newElement]);
   };
 
   const listItems = filteredSoftwares.map(software =>{
@@ -63,10 +41,8 @@ const App: FC = () => {
   const searchList = () =>{
     if (searchShow) {
       return (
-        <>
           <div className="listBox">{listItems}
           </div>
-        </>
       );
     }
   }
@@ -85,11 +61,7 @@ const App: FC = () => {
             </Col>
           );
         }
-        return (
-          <>
-            {remainingItems}
-          </>
-        );
+        return (<>{remainingItems}</>);
     }
   }
 
@@ -118,11 +90,7 @@ const App: FC = () => {
   })
 
   const openNotificationWithIcon = (type: NotificationType) => {
-    notification[type]({
-      message: 'Data Submitted',
-      description:
-        'Softwares send Successfully.',
-    });
+    notification[type]({ message: 'Data Submitted', description:'Softwares send Successfully.'});
   };
 
   const onSubmit = () => {
